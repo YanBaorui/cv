@@ -4,6 +4,7 @@
 		<meta charset="utf-8" />
 		<title>严宝瑞个人简历</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/loading.css">
 		<script src="//at.alicdn.com/t/font_1024184_xy18aai74u.js" ></script>
 		<style type="text/css">
     		.icon {
@@ -11,11 +12,32 @@
        		vertical-align: -0.15em;
        		fill: currentColor;
        		overflow: hidden;
-    		}
+				}
+
+				.site-welcome{
+					display:none;
+					position:fixed;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					background:gray;
+					z-index: 1;
+					justify-content:center;
+					align-items:center;
+				}
+				.site-welcome.active{
+					display:flex;
+				}
+
 		</style>
 	</head>
 	<body>
-		<div class="topNavBar">
+		<div id="siteWeclome" class="site-welcome active">
+			<div class="loading"></div>
+		</div>
+
+		<div id="topNavBar" class="topNavBar">
 			<div class="topNavBarinner clearfix">
 				<a class="logo" href="#" alt"logo" style="float:left;">
 					<span class="rs">RS</span><span class="card">card</span>
@@ -31,7 +53,7 @@
 						<li><a href="#">其他</a></li>
 					</ul>
 				</nav>
-			</div>	
+			</div>
 		</div>
 		<div class="banner">
 			<div class="mask"></div>
@@ -61,9 +83,9 @@
 					<dt>微信</dt>
 					<dd>xxxxx</dd>
 				</dl>
-			</div>	
+			</div>
 				</div>
-				
+
 			<footer class="media">
 				<a href="#">
 					<svg class="icon" aria-hidden="true">
@@ -95,8 +117,8 @@
 			<div class="downloadResume-wrapper">
 				<a  class="downloadResume" href="photo.jpg"target="_blank"download>下载 PDF 简历</a>
 			</div>
-			
-			
+
+
 			<p class="slefIntroduction">Hello! I’m Robert Smith. Senior Web Developer specializing in front end development. Experienced with all stages of the development cycle for dynamic web projects. Well-versed in numerous programming languages including JavaScript, SQL, and C. Stng background in project management and customer relations.</p>
 			<section class="skills">
       <h2>技能</h2>
@@ -149,8 +171,8 @@
         </ol>
         <div id="portfolioBar" class="bar">
       	<div class="bar-inner">
-      		
-      	</div>      	
+
+      	</div>
       </div>
       </nav>
       <script type="text/javascript">
@@ -179,5 +201,21 @@
 
     </section>
 		</main>
+		<script type="text/javascript">
+			setTimeout(function(){
+				siteWeclome.classList.remove('active')
+			},1500)
+
+			window.onscroll = function(xxx){
+				if(window.scrollY > 0)
+				{
+					topNavBar.classList.add("sticky")
+				}else{
+					topNavBar.classList.remove("sticky")
+				}
+				console.log(window.scrollY)
+			}
+
+		</script>
 	</body>
 </html>
