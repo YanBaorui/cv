@@ -44,6 +44,7 @@ ul,ol{
 	float: left;
 	margin-left: 17px;
 	margin-right: 17px;
+	position: relative;
 }
 .topNavBar nav>ul>li>a{
 	font-size: 12px;
@@ -54,18 +55,56 @@ ul,ol{
 	padding-top: 8px;
 	padding-bottom: 8px;
 	display: block;
+	position: relative;
+
 }
 /*.topNavBar nav>ul>li>a:hover{
 	border-bottom: 3px solid #e06567;
 }*/
-.topNavBar nav>ul>li>a:hover::after{
+.topNavBar nav > ul > li.active >a::after{
 	content:'';
-	poosition:absolute;
+	position:absolute;
 	display: block;
-	top:100%;
+	top: 100%;
 	width:100%;
+	left: 0;
 	background:#e06567;
 	height:3px;
+	animation: menuSlide 0.3s;
+}
+@keyframes menuSlide {
+	0%{
+		width :0;
+	}
+	100%{
+		width : 100%;
+	}
+
+}
+.topNavBar .submenu{
+	display: none;
+	position: absolute;
+	right: 0;
+	top:100%;
+	background: white;
+	color:#3d4451;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5)
+}
+.topNavBar li.active> .submenu{
+	display: block;
+	animation: submenuSlide .2s;
+}
+@keyframes submenuSlide {
+	0%{
+		margin-right: 100%;
+	}
+	100%{
+		margin-right: 0;
+	}
+}
+.topNavBar .submenu > li{
+	white-space:nowrap;
+	padding: 4px 8px;
 }
 .topNavBar .logo{
 	font-size: 24px;
