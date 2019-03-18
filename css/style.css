@@ -248,7 +248,8 @@ section.portfolio{
 	margin-bottom: 100px;
 }
 section.skills >h2,
-section.portfolio >h2{
+section.portfolio >h2,
+section.message >h2{
 	text-align: center;
 	color: #3D4451;
 	font-size: 34px;
@@ -351,6 +352,7 @@ section.message > ol{
   max-width: 700px;
   margin: 0 auto;
   border-top: 1px solid #DDD;
+	margin-top: 20px;
 }
 section.message > ol > li {
   padding: 16px;
