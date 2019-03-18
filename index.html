@@ -212,8 +212,19 @@
         	<img src="img/3.jpg" width="293px" alt="作品3"/>
         </div>
       </div>
-
     </section>
+
+		<section class="message">
+	    <h2>留言</h2>
+	    <ol id="messageList"></ol>
+	    <form id="postMessageForm" style="width: 700px; margin: 50px auto;">
+	      <label for="">姓名</label>
+	      <input type="text" name="name">
+	      <label for="">内容</label>
+	      <input type="text" name="content">
+	      <input type="submit" value="提交">
+	    </form>
+		</section>
 		</main>
 		<script type="text/javascript">
 			setTimeout(function(){
@@ -227,7 +238,7 @@
 				}else{
 					topNavBar.classList.remove("sticky")
 				}
-				console.log(window.scrollY)
+				//console.log(window.scrollY)
 			}
 
 			let liTags = document.querySelectorAll('nav.menu > ul > li')
@@ -252,7 +263,8 @@
 					}
 
 			}
-
 		</script>
+		<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.12.0/dist/av-min.js"></script>
+		<script src="js/message.js"></script>
 	</body>
 </html>
